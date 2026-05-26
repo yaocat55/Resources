@@ -1,0 +1,56 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "小恶魔.moc3",
+		"Textures": [
+			"小恶魔.8192/texture_00.webp"
+		],
+		"Physics": "小恶魔.physics3.json",
+		"DisplayInfo": "小恶魔.cdi3.json",
+		"Expressions":[
+			{
+				"Name":"1",
+				"File":"exp/1.exp3.json"
+			},
+			{
+				"Name":"2",
+				"File":"exp/2.exp3.json"
+			},
+			{
+				"Name":"3",
+				"File":"exp/3.exp3.json"
+			},
+			{
+				"Name":"4",
+				"File":"exp/4.exp3.json"
+			},
+			{
+				"Name":"5",
+				"File":"exp/5.exp3.json"
+			},
+			{
+				"Name":"6",
+				"File":"exp/6.exp3.json"
+			},
+			{
+				"Name":"7",
+				"File":"exp/7.exp3.json"
+			}
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	]
+}
