@@ -1,12 +1,12 @@
 {
     "Version": 3,
     "FileReferences": {
-        "Moc": "白猫.moc3",
+        "Moc": "whitecat.moc3",
         "Textures": [
-            "白猫.2048/texture_00.png"
+            "whitecat.2048/texture_00.png"
         ],
-        "Physics": "白猫.physics3.json",
-        "DisplayInfo": "白猫.cdi3.json",
+        "Physics": "whitecat.physics3.json",
+        "DisplayInfo": "whitecat.cdi3.json",
         "Expressions": [
             {
                 "Name": "cat",
