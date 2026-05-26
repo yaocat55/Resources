@@ -3,7 +3,7 @@
     "FileReferences": {
         "Moc": "whitecat.moc3",
         "Textures": [
-            "whitecat.2048/texture_00.png"
+            "whitecat.2048/texture_00.webp"
         ],
         "Physics": "whitecat.physics3.json",
         "DisplayInfo": "whitecat.cdi3.json",
