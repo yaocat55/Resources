@@ -1,53 +1,53 @@
 {
-	"Version": 3,
-	"FileReferences": {
-		"Moc": "SDwhite cat free.moc3",
-		"Textures": [
-			"SDwhite cat free.2048/texture_00.png"
-		],
-		"Physics": "SDwhite cat free.physics3.json",
-		"DisplayInfo": "SDwhite cat free.cdi3.json",
-		"Expressions": [
-			{
-				"Name": "cat.exp3.json",
-				"File": "cat.exp3.json"
-			},
-			{
-				"Name": "2.exp3.json",
-				"File": "2.exp3.json"
-			},
-			{
-				"Name": "3.exp3.json",
-				"File": "3.exp3.json"
-			},
-			{
-				"Name": "4.exp3.json",
-				"File": "4.exp3.json"
-			},
-			{
-				"Name": "hair2.exp3.json",
-				"File": "hair2.exp3.json"
-			},
-			{
-				"Name": "sing.exp3.json",
-				"File": "sing.exp3.json"
-			}
-		]
-	},
-	"Groups": [
-		{
-			"Target": "Parameter",
-			"Name": "LipSync",
-			"Ids": []
-		},
-		{
-			"Target": "Parameter",
-			"Name": "EyeBlink",
-			"Ids": [
-				"ParamEyeLOpen",
-				"ParamEyeROpen"
-			]
-		}
-	],
-	"HitAreas": []
+    "Version": 3,
+    "FileReferences": {
+        "Moc": "白猫.moc3",
+        "Textures": [
+            "白猫.2048/texture_00.png"
+        ],
+        "Physics": "白猫.physics3.json",
+        "DisplayInfo": "白猫.cdi3.json",
+        "Expressions": [
+            {
+                "Name": "cat",
+                "File": "exp/cat.exp3.json"
+            },
+            {
+                "Name": "2",
+                "File": "exp/2.exp3.json"
+            },
+            {
+                "Name": "3",
+                "File": "exp/3.exp3.json"
+            },
+            {
+                "Name": "4",
+                "File": "exp/4.exp3.json"
+            },
+            {
+                "Name": "hair2",
+                "File": "exp/hair2.exp3.json"
+            },
+            {
+                "Name": "sing",
+                "File": "exp/sing.exp3.json"
+            }
+        ]
+    },
+    "Groups": [
+        {
+            "Target": "Parameter",
+            "Name": "LipSync",
+            "Ids": []
+        },
+        {
+            "Target": "Parameter",
+            "Name": "EyeBlink",
+            "Ids": [
+                "ParamEyeLOpen",
+                "ParamEyeROpen"
+            ]
+        }
+    ],
+    "HitAreas": []
 }
