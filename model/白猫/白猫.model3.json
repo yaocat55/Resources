@@ -3,7 +3,7 @@
     "FileReferences": {
         "Moc": "白猫.moc3",
         "Textures": [
-            "白猫.2048/texture_00.webp"
+            "白猫.2048/texture_00.png"
         ],
         "Physics": "白猫.physics3.json",
         "DisplayInfo": "白猫.cdi3.json",
