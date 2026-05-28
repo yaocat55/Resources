@@ -1,6 +1,10 @@
 {
     "models": [
-        ["whitecat","Murasame", "阿库露_vts","符玄", "小恶魔"]
+        ["whitecat"],
+        ["Murasame"],
+        ["阿库露_vts"],
+        ["符玄"],
+        ["小恶魔"]
     ],
     "messages": [
         "你好，这里是白猫！",
