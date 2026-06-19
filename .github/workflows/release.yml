@@ -1,0 +1,77 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get latest release version
+        id: get_version
+        run: |
+          # 获取最新 release 的 tag，如果没有则从 v0.0.0 开始
+          LATEST_TAG=$(gh release list --limit 1 --json tagName --jq '.[0].tagName' 2>/dev/null || echo "")
+          if [ -z "$LATEST_TAG" ]; then
+            echo "version=v0.0.0" >> $GITHUB_OUTPUT
+          else
+            echo "version=$LATEST_TAG" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Calculate new version
+        id: new_version
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          # 去掉 v 前缀，拆出主版本号
+          VER_NUM=${VERSION#v}
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VER_NUM"
+          # 最小位 +1
+          NEW_PATCH=$((PATCH + 1))
+          NEW_TAG="v${MAJOR}.${MINOR}.${NEW_PATCH}"
+          echo "tag=$NEW_TAG" >> $GITHUB_OUTPUT
+          echo "name=${NEW_TAG}" >> $GITHUB_OUTPUT
+
+      - name: Package models
+        run: |
+          # 打包成 zip，包含模型目录和工具脚本
+          # 排除 .git 和 .github
+          ZIP_NAME="live2d-models-${{ steps.new_version.outputs.tag }}.zip"
+          zip -r "$ZIP_NAME" model/ tools/ README.md .gitignore \
+            --exclude "model/*/.gitkeep" \
+            --exclude ".git/*" \
+            --exclude ".github/*"
+          echo "zip=$ZIP_NAME" >> $GITHUB_OUTPUT
+          ls -lh "$ZIP_NAME"
+        shell: bash
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.new_version.outputs.tag }}
+          name: ${{ steps.new_version.outputs.name }}
+          body: |
+            ## ${{ steps.new_version.outputs.name }}
+
+            ### 变更内容
+            ${{ github.event.head_commit.message }}
+
+            ### 包含的模型
+            $(ls -d model/*/ | sed 's/^/ - /')
+
+            ### 如何使用
+            解压后将 `model/` 目录部署到 CDN，然后在挂件配置中指定 `cdnPath` 指向该目录。
+          files: live2d-models-*.zip
+          generate_release_notes: false
