@@ -1,0 +1,300 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左眼 开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左眼 微笑"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右眼 开闭"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右眼 微笑"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "眼球 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "眼球 Y"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉 变形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "右眉 变形"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "嘴部 变形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "嘴巴 张开和闭合"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "身体旋转 X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "身体旋转 Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "身体旋转 Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "前发 摆动"
+		},
+		{
+			"Id": "ParamHairFrontY",
+			"GroupId": "",
+			"Name": "前发 Y"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "侧发 摆动"
+		},
+		{
+			"Id": "ParamHairSideY",
+			"GroupId": "",
+			"Name": "侧发 Y"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "后发 摆动"
+		},
+		{
+			"Id": "ParamHairBackY",
+			"GroupId": "",
+			"Name": "后发 Y"
+		},
+		{
+			"Id": "ParamHairBack2",
+			"GroupId": "",
+			"Name": "后发2 摆动"
+		},
+		{
+			"Id": "ParamHairBack2Y",
+			"GroupId": "",
+			"Name": "后发2 Y"
+		},
+		{
+			"Id": "ParamArmL",
+			"GroupId": "",
+			"Name": "左臂"
+		},
+		{
+			"Id": "ParamArmL1",
+			"GroupId": "",
+			"Name": "左臂1"
+		},
+		{
+			"Id": "ParamArmR",
+			"GroupId": "",
+			"Name": "右臂"
+		},
+		{
+			"Id": "ParamHandL",
+			"GroupId": "",
+			"Name": "左手"
+		},
+		{
+			"Id": "ParamLegL",
+			"GroupId": "",
+			"Name": "左腿"
+		},
+		{
+			"Id": "ParamLegLY",
+			"GroupId": "",
+			"Name": "左腿 Y"
+		},
+		{
+			"Id": "ParamLegR",
+			"GroupId": "",
+			"Name": "右腿"
+		},
+		{
+			"Id": "ParamLegRY",
+			"GroupId": "",
+			"Name": "右腿 Y"
+		},
+		{
+			"Id": "ParamSkirt",
+			"GroupId": "",
+			"Name": "裙子 摆动"
+		},
+		{
+			"Id": "ParamSkirtY",
+			"GroupId": "",
+			"Name": "裙子 Y"
+		},
+		{
+			"Id": "ParamClothes",
+			"GroupId": "",
+			"Name": "衣服 摆动"
+		},
+		{
+			"Id": "ParamClothesY",
+			"GroupId": "",
+			"Name": "衣服 Y"
+		},
+		{
+			"Id": "ParamOpaishakeX",
+			"GroupId": "",
+			"Name": "摇晃 X"
+		},
+		{
+			"Id": "ParamOpaishakeY",
+			"GroupId": "",
+			"Name": "摇晃 Y"
+		},
+		{
+			"Id": "ParamCatEars",
+			"GroupId": "",
+			"Name": "猫耳"
+		},
+		{
+			"Id": "ParamCatY",
+			"GroupId": "",
+			"Name": "猫耳 Y"
+		},
+		{
+			"Id": "ParamCatHand",
+			"GroupId": "",
+			"Name": "猫手"
+		},
+		{
+			"Id": "ParamCatTail",
+			"GroupId": "",
+			"Name": "猫尾 摆动"
+		},
+		{
+			"Id": "ParamCatTailY",
+			"GroupId": "",
+			"Name": "猫尾 Y"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "face",
+			"Name": "face"
+		},
+		{
+			"Id": "body",
+			"Name": "body"
+		},
+		{
+			"Id": "eyeL",
+			"Name": "eyeL"
+		},
+		{
+			"Id": "eyeR",
+			"Name": "eyeR"
+		},
+		{
+			"Id": "hairFront",
+			"Name": "hairFront"
+		},
+		{
+			"Id": "hairSide",
+			"Name": "hairSide"
+		},
+		{
+			"Id": "hairBack",
+			"Name": "hairBack"
+		},
+		{
+			"Id": "hairBack2",
+			"Name": "hairBack2"
+		},
+		{
+			"Id": "armL",
+			"Name": "armL"
+		},
+		{
+			"Id": "armR",
+			"Name": "armR"
+		},
+		{
+			"Id": "handL",
+			"Name": "handL"
+		},
+		{
+			"Id": "legL",
+			"Name": "legL"
+		},
+		{
+			"Id": "legR",
+			"Name": "legR"
+		},
+		{
+			"Id": "skirt",
+			"Name": "skirt"
+		},
+		{
+			"Id": "clothes",
+			"Name": "clothes"
+		},
+		{
+			"Id": "catEars",
+			"Name": "catEars"
+		},
+		{
+			"Id": "catTail",
+			"Name": "catTail"
+		},
+		{
+			"Id": "catHand",
+			"Name": "catHand"
+		}
+	]
+}
