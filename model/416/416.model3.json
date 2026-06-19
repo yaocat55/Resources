@@ -5,8 +5,6 @@
         "Textures": [
             "416.2048/texture_00.png"
         ],
-        "Physics": "416.physics3.json",
-        "DisplayInfo": "416.cdi3.json",
         "Motions": {
             "Idle": [
                 {
