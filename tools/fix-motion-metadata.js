@@ -34,10 +34,13 @@ const SEGMENT_SIZE = {
 
 /**
  * 遍历曲线的 Segments 数组，计算出实际需要的点数和段数
+ *
+ * 注意：CubismMotion.parse() 中 totalSegmentCount 在每次循环（包括起始点）
+ * 都 +1。因此 Meta.TotalSegmentCount = 曲线数 + 实际段数（不含起始点）。
  */
 function calculateCounts(segments) {
   let totalPoints = 0;
-  let totalSegments = 0;
+  let actualSegments = 0;  // 不含起始点的实际段数
   let pos = 0;
   let isFirstSegment = true;
 
@@ -48,7 +51,7 @@ function calculateCounts(segments) {
       pos += 2;
       isFirstSegment = false;
     } else {
-      totalSegments += 1;
+      actualSegments += 1;
     }
 
     const segType = segments[pos];
@@ -62,7 +65,7 @@ function calculateCounts(segments) {
     pos += info.advance;
   }
 
-  return { totalPoints, totalSegments };
+  return { totalPoints, actualSegments };
 }
 
 // ====== 文件处理 ======
@@ -91,24 +94,28 @@ function fixMotionFile(filePath) {
 
     const result = calculateCounts(curve.Segments);
     calculatedPoints += result.totalPoints;
-    calculatedSegments += result.totalSegments;
+    calculatedSegments += result.actualSegments;
   }
+
+  // CubismMotion.parse() 中 totalSegmentCount = 每条曲线的起始点(1次) + 实际段数
+  const curveCount = curves.length;
+  const totalSegmentCount = curveCount + calculatedSegments;
 
   const oldPoints = data.Meta.TotalPointCount;
   const oldSegs = data.Meta.TotalSegmentCount;
 
-  if (oldPoints === calculatedPoints && oldSegs === calculatedSegments) {
+  if (oldPoints === calculatedPoints && oldSegs === totalSegmentCount) {
     console.log(`  ✅ 无需修复: ${path.basename(filePath)}`);
     return false;
   }
 
   data.Meta.TotalPointCount = calculatedPoints;
-  data.Meta.TotalSegmentCount = calculatedSegments;
+  data.Meta.TotalSegmentCount = totalSegmentCount;
 
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   console.log(`  🔧 已修复: ${path.basename(filePath)}`);
   console.log(`    TotalPointCount: ${oldPoints} → ${calculatedPoints}`);
-  console.log(`    TotalSegmentCount: ${oldSegs} → ${calculatedSegments}`);
+  console.log(`    TotalSegmentCount: ${oldSegs} → ${totalSegmentCount}`);
   return true;
 }
 
